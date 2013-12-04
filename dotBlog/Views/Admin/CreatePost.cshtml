@@ -1,0 +1,9 @@
+﻿@using (Html.BeginForm("CreatePost", "Admin", FormMethod.Post))
+{
+    @Html.TextBox("Title", (object)@Model.Title) <br />
+    @Html.TextArea("Body", (string)@Model.Body) <br />
+    @Html.TextArea("Description", (string)@Model.Description) <br />
+    @Html.TextBox("Url", (object)@Model.Url) <br />
+    
+    <button type="submit">Register</button>
+}

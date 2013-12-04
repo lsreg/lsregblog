@@ -1,0 +1,26 @@
+﻿
+@Scripts.Render("~/bundles/SyntaxHighlighter")
+@Styles.Render("~/Content/SyntaxHighlighter/css");
+<style type="text/css">
+  .syntaxhighlighter { 
+     overflow-y: hidden !important; 
+     overflow-x: auto !important; 
+  }
+</style>
+<script type="text/javascript">
+  $(document).ready(function () {
+    SyntaxHighlighter.all();    
+  });
+</script>
+<h2>@Model.Title</h2><br />
+@Html.Raw(@Model.Body)
+<br /><br />
+Category: @Model.PostCategory.Name
+<br /><br />
+Tags: 
+@foreach (DotBlog.Models.Tag tag in Model.PostTags)
+{
+  @tag.Name<text>; </text>
+  ; 
+}
+

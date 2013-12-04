@@ -1,0 +1,8 @@
+﻿@foreach (var post in Model)
+{    
+    @Html.ActionLink((string)@post.Title, "EditPost", "Admin", new { postId = @post.PostId }, null)
+    @Html.Raw(@post.Description)
+    <br /> 
+}
+
+@Html.ActionLink("Create new", "CreatePost", "Admin")

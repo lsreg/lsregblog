@@ -1,0 +1,28 @@
+﻿@model DotBlog.Models.Post
+@Scripts.Render("//code.jquery.com/jquery-1.10.2.min.js")
+@Scripts.Render("//tinymce.cachefly.net/4.0/tinymce.min.js")
+<script type="text/javascript">
+  tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor"
+    ],
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    toolbar2: "print preview media | forecolor backcolor emoticons"
+  });
+</script>
+
+@using (Html.BeginForm("EditPost", "Admin", FormMethod.Post))
+{
+    @Html.Hidden("PostId", (object)@Model.PostId)   
+    @Html.TextBox("Title", (object)@Model.Title) <br />
+    @Html.EditorFor(model => model.Url) <br />    
+    @Html.EditorFor(model => model.Body) <br />
+    @Html.TextBox("Description", (object)@Model.Description) <br />
+    
+    <button type="submit">Register</button>
+}
+

@@ -1,0 +1,6 @@
+﻿@foreach (var post in Model)
+{    
+    @Html.ActionLink((string)@post.Title, "Index", "Post", new { postUrl = @post.Url }, null)
+    @Html.Raw(@post.Description)
+    <br /> 
+}

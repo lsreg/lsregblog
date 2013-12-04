@@ -1,0 +1,23 @@
+﻿<div class="row">
+  <div class="col-md-2">
+    @using (Html.BeginForm("Categories", "Admin", FormMethod.Post))
+    {
+      @Html.TextBox("NewCategory.Title", (string)@Model.NewCategory.Title); <br />
+      @Html.TextArea("NewCategory.Description", (string)@Model.NewCategory.Description) <br />
+      @Html.TextBox("NewCategory.Url", (string)@Model.NewCategory.Url) <br />    
+      <button type="submit">Create category</button>
+    }
+  </div>
+  <div class="col-md-4">
+      <div class="list-group">
+
+@foreach (DotBlog.Models.Category category in Model.Categories)
+{    
+  <div class="list-group-item">
+    <h4> @Html.Label(category.CategoryId.ToString()) @Html.Label(category.Title) </h4>    
+    @Html.Label(category.Description)
+    </div>
+}
+    </div>
+  </div>
+</div>
