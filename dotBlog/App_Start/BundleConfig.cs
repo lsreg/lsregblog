@@ -42,8 +42,14 @@ namespace DotBlog
       bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Content/bootstrap/js/bootstrap.js"));
       bundles.Add(new StyleBundle("~/Content/bootstrap/css").Include("~/Content/bootstrap/css/bootstrap.css"));
 
-      bundles.Add(new ScriptBundle("~/bundles/SyntaxHighlighter").Include("~/Content/SyntaxHighlighter/js/shCore.js").Include("~/Content/SyntaxHighlighter/js/shBrushCSharp.js"));
-      bundles.Add(new StyleBundle("~/Content/SyntaxHighlighter/css").Include("~/Content/SyntaxHighlighter/css/shCore.css").Include("~/Content/SyntaxHighlighter/css/shThemeDefault.css"));
+      bundles.Add(new ScriptBundle("~/bundles/SyntaxHighlighter").
+        Include("~/Content/SyntaxHighlighter/js/shCore.js").
+        Include("~/Content/SyntaxHighlighter/js/shBrushCSharp.js"));
+      bundles.Add(new StyleBundle("~/Content/SyntaxHighlighter/css").
+        Include("~/Content/SyntaxHighlighter/css/shCore.css").
+        Include("~/Content/SyntaxHighlighter/css/shThemeDefault.css"));
+
+      bundles.Add(new ScriptBundle("~/bundles/tinymce").Include("~/Content/tinymce/js/plugins.js"));
     }
   }
 }

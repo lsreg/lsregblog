@@ -1,6 +1,7 @@
 ﻿@model DotBlog.Models.Post
 @Scripts.Render("//code.jquery.com/jquery-1.10.2.min.js")
 @Scripts.Render("//tinymce.cachefly.net/4.0/tinymce.min.js")
+@Scripts.Render("~/bundles/tinymce")
 <script type="text/javascript">
   tinymce.init({
     selector: "textarea",
@@ -8,10 +9,10 @@
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen",
         "insertdatetime media nonbreaking save table contextmenu directionality",
-        "emoticons template paste textcolor"
+        "emoticons template paste textcolor csharp"
     ],
     toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    toolbar2: "print preview media | forecolor backcolor emoticons"
+    toolbar2: "print preview media | forecolor backcolor emoticons | csharp"
   });
 </script>
 
